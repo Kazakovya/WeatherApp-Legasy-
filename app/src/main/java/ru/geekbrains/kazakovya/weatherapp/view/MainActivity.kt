@@ -1,8 +1,9 @@
 package ru.geekbrains.kazakovya.weatherapp.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import ru.geekbrains.kazakovya.weatherapp.R
+import ru.geekbrains.kazakovya.weatherapp.view.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
+                .commitAllowingStateLoss()
         }
     }
 }
