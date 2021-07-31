@@ -39,10 +39,6 @@ class WeatherLoader(
                     )
                     urlConnection.readTimeout = 10000
                     val bufferedReader = BufferedReader(InputStreamReader(urlConnection.inputStream))
-<<<<<<< HEAD
-=======
-                    // преобразование ответа от сервера (JSON) в модель данных (WeatherDTO)
->>>>>>> origin/lesson5
                     val weatherDTO: WeatherDTO = Gson().fromJson(getLines(bufferedReader), WeatherDTO::class.java)
                     handler.post { listener.onLoaded(weatherDTO) }
                 } catch (e: Exception) {
